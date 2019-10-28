@@ -1,13 +1,15 @@
+const set = require('lodash.set')
+
 module.exports = {
   client: null,
   config: {},
   methods: {
     find(config) {
-      return this.listAction(config).then(res=>res.data)
+      return this.listAction(config).then(res => res.data)
     },
     findOne(id, config = {}) {
       set(config, 'pathParams.id', id)
-      return this.detailAction(config).then(res=>res.data)
+      return this.detailAction(config).then(res => res.data)
     },
   },
   actions: {

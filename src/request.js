@@ -17,5 +17,4 @@ function interpolate(str, values) {
   return str
 }
 
-
 module.exports = request

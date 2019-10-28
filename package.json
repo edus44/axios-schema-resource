@@ -5,16 +5,37 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "test-dev": "jest --watchAll"
+    "test-dev": "jest --watch",
+    "version": "conventional-changelog -p eslint -o CHANGELOG.md -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
     "lodash.merge": "^4.6.2",
     "lodash.set": "^4.3.2"
   },
+  "engines": {
+    "node": ">=6"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "validate-commit-msg -p eslint"
+  },
   "devDependencies": {
     "axios": "^0.19.0",
     "axios-mock-adapter": "^1.17.0",
     "jest": "^24.9.0",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "conventional-changelog": "^3.0.5",
+    "conventional-changelog-cli": "^2.0.11",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "lint-staged": "^8.1.0",
+    "validate-commit": "^3.4.0",
+    "yorkie": "^2.0.0"
   }
 }

@@ -1,5 +1,3 @@
-const set = require('lodash.set')
-
 const DEFAULTS = require('./defaults')
 const request = require('./request')
 
