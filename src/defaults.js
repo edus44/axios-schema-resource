@@ -1,15 +1,23 @@
 const set = require('lodash.set')
 
-module.exports = {
+const DEFAULTS = {
   client: null,
   config: {},
   methods: {
     find(config) {
-      return this.listAction(config).then(res => res.data)
+      return this.$list(config).then(res => res.data)
     },
     findOne(id, config = {}) {
-      set(config, 'pathParams.id', id)
-      return this.detailAction(config).then(res => res.data)
+      set(config, 'urlParams.id', id)
+      return this.$detail(config).then(res => res.data)
+    },
+    remove(id, config = {}) {
+      set(config, 'data', id)
+      return this.$multiDelete(config).then(res => res.data)
+    },
+    removeOne(id, config = {}) {
+      set(config, 'urlParams.id', id)
+      return this.$delete(config).then(res => res.data)
     },
   },
   actions: {
@@ -18,27 +26,23 @@ module.exports = {
     },
     detail: {
       method: 'get',
-      meta: {
-        prependUrl: '/:id',
-      },
+      prependUrl: '/:id',
     },
     create: {
       method: 'post',
     },
     update: {
       method: 'put',
-      meta: {
-        prependUrl: '/:id',
-      },
+      prependUrl: '/:id',
     },
     delete: {
       method: 'delete',
-      meta: {
-        prependUrl: '/:id',
-      },
+      prependUrl: '/:id',
     },
     multiDelete: {
       method: 'delete',
     },
   },
 }
+
+module.exports = DEFAULTS
