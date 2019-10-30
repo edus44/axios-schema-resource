@@ -11,6 +11,11 @@ const DEFAULTS = {
       set(config, 'urlParams.id', id)
       return this.$detail(config).then(res => res.data)
     },
+    create(id, data, config = {}) {
+      set(config, 'urlParams.id', id)
+      config.data = data
+      return this.$create(config).then(res => res.data)
+    },
     update(id, data, config = {}) {
       set(config, 'urlParams.id', id)
       config.data = data
