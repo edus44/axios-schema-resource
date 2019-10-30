@@ -30,10 +30,12 @@ it('should have proper methods', async () => {
     $detail: expect.any(Function),
     $create: expect.any(Function),
     $update: expect.any(Function),
+    $patch: expect.any(Function),
     $delete: expect.any(Function),
-    $multiDelete: expect.any(Function),
     find: expect.any(Function),
     findOne: expect.any(Function),
+    update: expect.any(Function),
+    patch: expect.any(Function),
     remove: expect.any(Function),
   })
 })
@@ -130,18 +132,7 @@ it('should response from remove one method', async () => {
     client: axios,
     config: { baseURL: 'http://example.com', url: '/user' },
   })
-  const res = await user.removeOne(15)
-  expect(res).toMatchObject({
-    ok: true,
-  })
-})
-it('should response from remove many method', async () => {
-  mock.onDelete('http://example.com/user').reply(200, { ok: true })
-  const user = resource({
-    client: axios,
-    config: { baseURL: 'http://example.com', url: '/user' },
-  })
-  const res = await user.remove([15, 16, 17])
+  const res = await user.remove(15)
   expect(res).toMatchObject({
     ok: true,
   })

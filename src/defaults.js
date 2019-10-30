@@ -11,11 +11,17 @@ const DEFAULTS = {
       set(config, 'urlParams.id', id)
       return this.$detail(config).then(res => res.data)
     },
-    remove(id, config = {}) {
-      set(config, 'data', id)
-      return this.$multiDelete(config).then(res => res.data)
+    update(id, data, config = {}) {
+      set(config, 'urlParams.id', id)
+      config.data = data
+      return this.$patch(config).then(res => res.data)
     },
-    removeOne(id, config = {}) {
+    patch(id, data, config = {}) {
+      set(config, 'urlParams.id', id)
+      config.data = data
+      return this.$patch(config).then(res => res.data)
+    },
+    remove(id, config = {}) {
       set(config, 'urlParams.id', id)
       return this.$delete(config).then(res => res.data)
     },
@@ -24,23 +30,24 @@ const DEFAULTS = {
     list: {
       method: 'get',
     },
+    create: {
+      method: 'post',
+    },
     detail: {
       method: 'get',
       prependUrl: '/:id',
-    },
-    create: {
-      method: 'post',
     },
     update: {
       method: 'put',
       prependUrl: '/:id',
     },
+    patch: {
+      method: 'patch',
+      prependUrl: '/:id',
+    },
     delete: {
       method: 'delete',
       prependUrl: '/:id',
-    },
-    multiDelete: {
-      method: 'delete',
     },
   },
 }
