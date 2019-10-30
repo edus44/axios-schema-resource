@@ -1,6 +1,6 @@
 # axios-schema-resource
 
-Simple resource layer over [axios](https://github.com/axios/axios) client with a few . Valid for browser and node (6+).
+Simple resource layer over [axios](https://github.com/axios/axios) client with a few helpers. Valid for browser and node (6+).
 
 ##### Basic usage example
 
