@@ -2,6 +2,8 @@
 
 Simple resource layer over [axios](https://github.com/axios/axios) client with a few helpers. Valid for browser and node (6+).
 
+**Only works for axios version 0.18.1 [more info](https://github.com/axios/axios/pull/2006)**
+
 ##### Basic usage example
 
 ```js
@@ -83,10 +85,10 @@ User.$enable({ urlParams:{ userId:21 }})
 - Action method (`user.$enable(methodConfig)`)
 - Action definition (`action: { enable: actionConfig }`)
 - Resource definition (`resource({ config: resourceConfig })`)
-- Default definition (`resource.withDefaults({ config: defaultConfig })`) _See [Defaults resource definition](#defaults)_
-- Axios defaults (`axios.create(axiosConfig)`) _See [Change axios defaults](#defaults)_
+- Default definition (`resource.withDefaults({ config: defaultConfig })`) _See [Defaults resource definition](#defaults-resource-definition)_
+- Axios defaults (`axios.create(axiosConfig)`) _See [Change axios defaults](#change-axios-defaults)_
 
-**Final url** is the result of `prependUrl + url + urlParams`, and the interpolation of `urlParams` object. _See action definition example above_.
+**Final url** is the result of `prependUrl + url + appendUrl`, and the interpolation of `urlParams` object. _See action definition example above_.
 
 ##### Default actions available
 
