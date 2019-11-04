@@ -1,4 +1,17 @@
-## 0.0.2 (2019-10-30)
+## [0.0.3](https://github.com/edus44/axios-schema-resource/compare/v0.0.2...v0.0.3) (2019-11-04)
+
+
+### Update
+
+* Readme typos ([75a8034](https://github.com/edus44/axios-schema-resource/commit/75a80346cc1d1dc15681909c98bde68623a19158))
+
+### Upgrade
+
+* Deps ([ba9daf7](https://github.com/edus44/axios-schema-resource/commit/ba9daf7564e29c094df9319bee995178767be7f2))
+
+
+
+## [0.0.2](https://github.com/edus44/axios-schema-resource/compare/ac6382e5b84417617bb33f0618ddd38ce83faa58...v0.0.2) (2019-10-30)
 
 
 ### New
