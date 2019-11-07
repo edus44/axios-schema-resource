@@ -9,17 +9,23 @@ const request = require('./request')
 function withDefaults(defaults = {}) {
   defaults = Object.assign({}, DEFAULTS, defaults)
 
-  return function resource({ client, actions = {}, methods = {}, config = {} } = {}) {
+  return function resource({ client, actions = {}, methods = {}, config = {}, statics = {} } = {}) {
     // Merge with defaults properties
     Object.assign(actions, defaults.actions)
     Object.assign(methods, defaults.methods)
     Object.assign(config, defaults.config)
+    Object.assign(statics, defaults.static)
     if (!client) client = defaults.client
 
     // Checks client is valid
     if (typeof client !== 'function') throw new Error('Client required')
 
     const instance = {}
+
+    // Apply statics
+    for (const propName in statics) {
+      instance[propName] = statics[propName]
+    }
 
     // Rebind methods
     for (const methodName in methods) {

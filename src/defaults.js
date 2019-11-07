@@ -3,6 +3,7 @@ const set = require('lodash.set')
 const DEFAULTS = {
   client: null,
   config: {},
+  statics: {},
   methods: {
     find(config) {
       return this.$list(config).then(res => res.data)

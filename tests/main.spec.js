@@ -72,6 +72,28 @@ it('should change default actions and methods', async () => {
   })
 })
 
+it('should rebind methods', async () => {
+  const user = resource({
+    client: axios,
+    methods: {
+      whoami() {
+        return this
+      },
+    },
+  })
+  expect(user.whoami()).toBe(user)
+})
+it('should copy statics', async () => {
+  const model = {}
+  const user = resource({
+    client: axios,
+    statics: {
+      model,
+    },
+  })
+  expect(user.model).toBe(model)
+})
+
 it('should response from list action', async () => {
   mock.onGet('http://example.com/').reply(200, { foo: 'bar' })
   const user = resource({

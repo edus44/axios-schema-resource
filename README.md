@@ -154,6 +154,21 @@ await User.delete(15)
 // DELETE https://myapi.com/user/15
 ```
 
+## Static properties
+
+You can use [axios custom instance](https://github.com/axios/axios#custom-instance-defaults):
+
+```js
+const User = resource({
+  client,
+  statics: {
+    model: {
+      name: String
+    }
+  },
+})
+console.log(User.model.name === String) // true
+```
 ## Change axios defaults
 
 You can use [axios custom instance](https://github.com/axios/axios#custom-instance-defaults):
@@ -237,6 +252,7 @@ const set = require('lodash.set')
 const DEFAULTS = {
   client: null,
   config: {},
+  statics: {},
   methods: {
     find(config) {
       return this.$list(config).then(res => res.data)
