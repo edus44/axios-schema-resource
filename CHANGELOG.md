@@ -1,3 +1,12 @@
+## [0.0.4](https://github.com/edus44/axios-schema-resource/compare/v0.0.3...v0.0.4) (2019-11-07)
+
+
+### Fix
+
+* Create and update defaults ([9978abd](https://github.com/edus44/axios-schema-resource/commit/9978abd592a0a5df03092f928d26cb23860a7552))
+
+
+
 ## [0.0.3](https://github.com/edus44/axios-schema-resource/compare/v0.0.2...v0.0.3) (2019-11-04)
 
 
