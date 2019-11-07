@@ -1,3 +1,12 @@
+## [0.0.5](https://github.com/edus44/axios-schema-resource/compare/v0.0.4...v0.0.5) (2019-11-07)
+
+
+### New
+
+* Statics ([ddf3b40](https://github.com/edus44/axios-schema-resource/commit/ddf3b40b7aa4ef9b5a3dd854abbe4f350ec5eda7))
+
+
+
 ## [0.0.4](https://github.com/edus44/axios-schema-resource/compare/v0.0.3...v0.0.4) (2019-11-07)
 
 
