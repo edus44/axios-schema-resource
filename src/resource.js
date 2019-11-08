@@ -39,7 +39,7 @@ function withDefaults(defaults = {}) {
       }
     }
 
-    return instance
+    return Object.freeze(instance)
   }
 }
 
