@@ -1,3 +1,12 @@
+## [0.0.6](https://github.com/edus44/axios-schema-resource/compare/v0.0.5...v0.0.6) (2019-11-08)
+
+
+### Update
+
+* Freeze returned object ([83b3140](https://github.com/edus44/axios-schema-resource/commit/83b3140b89645bfd1ce42b23795d6a3be4b78e0f))
+
+
+
 ## [0.0.5](https://github.com/edus44/axios-schema-resource/compare/v0.0.4...v0.0.5) (2019-11-07)
 
 
