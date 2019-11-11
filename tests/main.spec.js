@@ -83,6 +83,16 @@ it('should rebind methods', async () => {
   })
   expect(user.whoami()).toBe(user)
 })
+it('should allow override defaults methods', async () => {
+  const find = () => 'custom'
+  const user = resource({
+    client: axios,
+    methods: {
+      find,
+    },
+  })
+  expect(user.find()).toBe('custom')
+})
 it('should copy statics', async () => {
   const model = {}
   const user = resource({

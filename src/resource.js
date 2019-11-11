@@ -11,10 +11,10 @@ function withDefaults(defaults = {}) {
 
   return function resource({ client, actions = {}, methods = {}, config = {}, statics = {} } = {}) {
     // Merge with defaults properties
-    Object.assign(actions, defaults.actions)
-    Object.assign(methods, defaults.methods)
-    Object.assign(config, defaults.config)
-    Object.assign(statics, defaults.static)
+    actions = Object.assign({}, defaults.actions, actions)
+    methods = Object.assign({}, defaults.methods, methods)
+    config = Object.assign({}, defaults.config, config)
+    statics = Object.assign({}, defaults.static, statics)
     if (!client) client = defaults.client
 
     // Checks client is valid
