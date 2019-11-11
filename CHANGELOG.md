@@ -1,3 +1,12 @@
+## [0.0.7](https://github.com/edus44/axios-schema-resource/compare/v0.0.6...v0.0.7) (2019-11-11)
+
+
+### Update
+
+* Allow overriding defaults ([28f3937](https://github.com/edus44/axios-schema-resource/commit/28f3937967043bd97203d6e314cee4448afb2c80))
+
+
+
 ## [0.0.6](https://github.com/edus44/axios-schema-resource/compare/v0.0.5...v0.0.6) (2019-11-08)
 
 
